@@ -78,7 +78,7 @@ var dog = {
   name: "Amir",
   color: "Aghayi",
   age: 32,
-  goodboy: true
+  goodBoy: true
 };
 
 
@@ -98,7 +98,7 @@ var dog = {
   name: "Amir",
   color: "Aghayi",
   age: 32,
-  goodboy: true,
+  goodBoy: true,
   bark: function(){
     return "Woof woof";
   }
@@ -129,7 +129,7 @@ function looper(arr){
   var mySum = 0;
   for(i=0;i<arr.length;i++){
     if(arr[i] % 2 !== 0 || arr[i] >=100){
-      return mySum += arr[i];
+       mySum += arr[i];
     }
   }
   return mySum;
@@ -178,7 +178,7 @@ function sampleCallbackTwo() {
 }
 
 //Code Here
-function invoker(param,callback){
+function invoker(callback){
   return callback();
 }
 
@@ -206,16 +206,23 @@ function pond() {
 //as strings.
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
+let globalScope = ["duck"];
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
+let bathroomScope = ["duck", "rubberDuck"];
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
+let bathtubScope = ["duck", "sailorDuck", "rubberDuck"];
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
+let pondScope = ["duck", "realDuck"];
+
+
+
+
+
+
+
 
 //////////////////PROBLEM 10////////////////////
 
@@ -223,11 +230,16 @@ let pondScope = ["duck", "sailorDuck", "rubberDuck", "realDuck"];
 //function which returns your name.
 
 //Code Here
+function outerFn(){
+  return () => "Amir Aghayi";
+}
 
 //Now save the result of invoking outerFn into a variable called innerFn.
 
 //Code Here
+var innerFn = outerFn();
 
 //Now invoke innerFn and save the result to a variable called finalResult.
 
 //Code Here
+var finalResult = innerFn(); 
