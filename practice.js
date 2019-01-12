@@ -16,6 +16,9 @@ function greeting(name) {
 //Name it newGreeting.
 
 //Code Here
+var newGreeting = function(name) {
+  return `Hello, ${name}`
+}
 
 //////////////////PROBLEM 3////////////////////
 
@@ -23,6 +26,9 @@ function greeting(name) {
 //Name it finalGreeting.
 
 //Code Here
+var finalGreeting = name => `Hello, ${name}`;
+
+
 
 //////////////////PROBLEM 4////////////////////
 
@@ -30,6 +36,19 @@ function greeting(name) {
 //"apples", "milk", "eggs", "bread"
 
 //Code Here
+var groceries = ["apples","milk","eggs","bread"];
+// similar to:
+// var groceries = {
+//   0: "apples",
+//   1: "milk",
+//   2: "eggs",
+//   3: "bread"
+// };
+
+
+groceries[1];
+
+groceries.indexOf('chocolate');
 
 //Write a function called doubleCheck that takes in an array
 //as a parameter.
@@ -38,6 +57,14 @@ function greeting(name) {
 //doubleCheck should return the array.
 
 //Code Here
+function doubleCheck(arr){
+  if(arr.indexOf('chocolate') == -1){
+    // var checkForChocolate = arr.splice(4, 0, "chocolate")
+    arr.push("chocolate");
+  }
+  return arr;
+}
+
 
 //////////////////PROBLEM 5////////////////////
 
@@ -47,20 +74,44 @@ function greeting(name) {
 //and goodBoy (a boolean).
 
 //Code Here
+var dog = {
+  name: "Amir",
+  color: "Aghayi",
+  age: 32,
+  goodboy: true
+};
+
 
 //...access the dog's name from the object and assign it to a
 //variable called devMountainClassPet.
 
 //Code Here
+var devMountainClassPet = dog.name;
+
+
 
 //Add a method to dog called bark.
 //The value of bark should be a function that returns the string "Woof woof".
 
 //Code Here
+var dog = {
+  name: "Amir",
+  color: "Aghayi",
+  age: 32,
+  goodboy: true,
+  bark: function(){
+    return "Woof woof";
+  }
+};
+
+
 
 //Store the result of invoking the bark method in a variable called ruff.
 
 //Code Here
+var ruff = dog.bark();
+
+
 
 //////////////////PROBLEM 6////////////////////
 
@@ -74,6 +125,18 @@ function greeting(name) {
 //Return mySum.
 
 //Code Here
+function looper(arr){
+  var mySum = 0;
+  for(i=0;i<arr.length;i++){
+    if(arr[i] % 2 !== 0 || arr[i] >=100){
+      return mySum += arr[i];
+    }
+  }
+  return mySum;
+}
+
+
+
 
 //////////////////PROBLEM 7////////////////////
 
@@ -87,11 +150,19 @@ function math(num1, num2, callback) {
 //returns the result of adding them together.
 
 //Code Here
+function add(x,y){
+  return x + y;
+}
+
 
 //Now invoke math, passing in the numbers 3 and 4, and your add function,
 //storing the result in the variable mathSum.
 
 //Code Here
+
+var mathSum = math(3,4,add);
+
+
 
 //////////////////PROBLEM 8////////////////////
 
@@ -107,6 +178,11 @@ function sampleCallbackTwo() {
 }
 
 //Code Here
+function invoker(param,callback){
+  return callback();
+}
+
+
 
 //////////////////PROBLEM 9////////////////////
 
